@@ -1,0 +1,13 @@
+# Site settings
+title: Name.tmp
+email: yoadsn@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Starting up a blog is easy, maintaining it is going to be hard.
+  I will try though...
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yoadsn.github.io" # the base hostname & protocol for your site
+twitter_username: ysnapir
+github_username:  yoadsn
+
+# Build settings
+markdown: kramdown
