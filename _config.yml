@@ -14,5 +14,8 @@ github_username:  yoadsn
 disqus: 'boxofbolts'
 comments: true
 
+# Set this to your UA-# value, or '' to disable the block completely
+gaaccount: 'UA-64738582-1'
+
 # Build settings
 markdown: kramdown
