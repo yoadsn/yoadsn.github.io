@@ -2,9 +2,9 @@
 title: Box Of Bolts
 email: yoadsn@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  A Box to place my random bolts of thought.
+  Yoad Snapir's blog, Hosting my random bolts of thought.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yoadsn.github.io" # the base hostname & protocol for your site
+url: "http://blog.boxofbolts.com" # the base hostname & protocol for your site
 twitter_username: ysnapir
 github_username:  yoadsn
 

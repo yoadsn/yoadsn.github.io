@@ -2,8 +2,16 @@
 layout: post
 title:  "Setting up HTTPS for self hosted web servers on windows"
 date:   2015-06-29 08:32:08
-categories: SSL windows OWIN
+categories: SSL windows OWIN Guide
 author: Yoad Snapir
+tags:
+  - SSL
+  - HTTPS
+  - OWIN
+  - Self Host
+  - HTTP.sys
+  - pfx
+  - Windows
 comments: true
 ---
 
