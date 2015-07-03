@@ -5,6 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Yoad Snapir's blog, Hosting my random bolts of thought.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://blog.boxofbolts.com" # the base hostname & protocol for your site
+permalink: pretty
 twitter_username: ysnapir
 github_username:  yoadsn
 
