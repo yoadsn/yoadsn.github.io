@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Setting up HTTPS for self hosted web servers on windows"
+title:  "Configure HTTPS with HTTP.sys for self hosted web server"
+description: "Learn the basics of SSL and HTTPS and understand why and how to configure your web server outside of IIS using HTTP.sys"
 date:   2015-06-29 08:32:08
 categories: SSL windows OWIN Guide
 author: Yoad Snapir
