@@ -1,6 +1,6 @@
 pre,
 pre code {
-  background-color: transparent;
+  background-color: $pre-background-color;
   border-radius: $pre-border-radius;
 }
 
@@ -10,7 +10,8 @@ code {
 }
 
 code {
-  color: #7a7a7a;
+  color: #d3af86;
+  background-color: $pre-background-color;
 }
 
 pre {

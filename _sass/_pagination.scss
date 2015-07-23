@@ -9,10 +9,10 @@
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  background: #fafafa;
+  background: #121221;
   border-radius: 0.1875em;
-  border: 1px solid #f3f3f3;
-  color: #333333;
+  border: 1px solid #363643;
+  color: #605E4A;
   padding: 1em 1.5em;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .pagination a:active {
-  background: #f7f7f7;
+  background: #121221;
 }
 
 .pagination .button {
@@ -37,12 +37,12 @@
 
 .button-disabled {
   opacity: 0.55;
-  background-color: #999;
+  background-color: #171824;
 }
 
 .button-disabled:hover,
 .button-disabled:active,
 .button-disabled:focus {
   cursor: not-allowed;
-  background-color: #999;
+  background-color: #171824;
 }

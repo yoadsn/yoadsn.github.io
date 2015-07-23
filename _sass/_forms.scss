@@ -5,6 +5,7 @@ fieldset {
   font-size: $form-field-font-size;
   margin-top: 0;
   margin-bottom: $space-1, .5rem;
+  color: #867967;
 }
 
 input[type=text],
@@ -50,7 +51,7 @@ textarea {
 }
 
 .field-light {
-  background-color: white;
+  background-color: $form-field-background-color;
   transition: box-shadow .2s ease;
   border-style: solid;
   border-width: $border-width;
@@ -60,7 +61,7 @@ textarea {
 
 .field-light:focus {
   outline: none;
-  border-color: $blue;
+  border-color: white;
   box-shadow: 0 0 2px rgba($blue,.5);
 }
 
