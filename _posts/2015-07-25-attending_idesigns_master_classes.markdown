@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  Plato's Cave - Attending iDesign Master Classes
+title:  Plato's Cave - Attending IDesign Master Classes
 description: Learn the basics of SSL and HTTPS and understand why and how to configure your web server outside of IIS using HTTP.sys
 date:   2015-07-25 00:00:00
 categories: Thoughts Software Architecture
 author: Yoad Snapir
 summary: My experience of taking the iDesign master classes. Warning, contains some troubling truths.
 tags:
-  - iDesign
+  - IDesign
   - Software Architrecture
   - PDMC
   - AMC
