@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Working With Graph Data Structures (In .Net)"
-description: Need a Description
+description: An overview of Graphs and useful tools to work with them for developers.
 date:   2015-08-31 00:00:00
 categories: DotNet Graphs
 author: Yoad Snapir
-summary: Need Summary
+summary: In the past I found myself solving problems from different areas using Graph models and Graph data structures. In this blog post I would like to share some of the tools and approaches I used and make that model more familiar to other developers.
 tags:
   - QuickGraph
   - GraphML
