@@ -15,7 +15,7 @@ tags:
 comments: true
 ---
 
-##Learning Hurts##
+## Learning Hurts ##
 
 > "The more I learn, the more I realize [how much] I don’t know." A. Einstein
 
@@ -23,7 +23,7 @@ I recently realized how I can tell the difference between a normal learning expe
 I had two recent experiences like that, both were [IDesign][idesign] classes, both were given by [Juval Löwy][lowy].
 
 
-##The Elusive Software Architect##
+## The Elusive Software Architect ##
 
 Being a software developer by profession and a problem solver by passion, I grew up into doing what I do today. Things mostly came naturally - that was, apparently, a big mistake.
 
@@ -42,7 +42,7 @@ Let me summarize it freely, most of us are lazy, trusting too much in the hands 
 
 The accidental reason I took the AMC was the presense of the word "Architect" in its name. The reason you should take it is to learn the truth about yourself and the profession you are in. Unless, you would not want to face the pain in realizing that truth.
 
-##The IKEA allegory##
+## The IKEA allegory ##
 
 Juval mentions IKEA furniture once in a while, would you buy such a furniture without its assembly manual? Do you imagine creating such assembly manual regardless of the design of the furniture itself? So many things could go wrong if you separate the two. Think impossibly complex furniture no one could ever build, or a construction process leaving out a large chunk of the furniture.
 
@@ -55,7 +55,7 @@ That duality, the design of the system and the design of the construction plan f
 
 Attending the next class was an even deeper disruption to what I believed was true.
 
-##Measure Thrice, Check Twice and Cut Once##
+## Measure Thrice, Check Twice and Cut Once ##
 
 The "Project Design Master Class" (PDMC) is an unremarkable name for a class that hides in my opinion an even larger boon than the AMC does. So unremarkable in fact, that before, during and after taking the class I could not explain in a sentence to anyone who asked what it was about without a feeling I am leaving something out. I usually mumbled something like "It's about planning, and projects, but for software, but not only, and in a surprising way..." but usually they dosed off and lost interest anyway after they heard the word "planning".
 
@@ -69,7 +69,7 @@ These efforts payoff even when the design process clearly indicates the project 
 
 Perhaps all the above is natural to you, it sure wasn't for me. But the level of attention to details, the sheer confidence and reliance on good engineering when designing the project is an eye-opener, no less. Juval mitigates real concerns with real tools. Down to the finer points of how best to present the plans to the decision makers allowing them to choose only good options. (or actually preventing them from making bad ones)
 
-##And a Show It Is##
+## And a Show It Is ##
 
 Juval is known to appreciate the scholars of old. He is relying and borrowing from other fields and aspects of life to better understand and explain our industry. While standing on the shoulders of giants is good, imagine the benefits of a giant standing on these shoulders. This post is not about Juval, but for lack of a better place I would like to give my personal point of view on the person behind IDesign.
 
@@ -77,7 +77,7 @@ Juval is sharp, and using his own terms, he "get's it". His analytic skills comb
 
 Attending the class, on top of what I said before, was a great show. Juval is a top presenter, and clearly enjoys what he is doing.
 
-##LEGO and Entropy##
+## LEGO and Entropy ##
 
 Since I was a young child I remember always comparing processes to LEGO. Specifically to either building a large dome from many LEGO bricks or smashing that same dome back to the pile of bricks it was created from.  This was my intuitive way of understanding entropy, and my practical way of telling the difference between applying force to organize something (against the universe) and applying force to disorganize something (with the universe). Things that go with the universe would go there anyway eventually. The mind of a child, go figure (pun intended).
 
@@ -86,7 +86,7 @@ Since I was a young child I remember always comparing processes to LEGO. Specifi
 I understand that building software goes against the universe, and as such, it is a process you need to apply force to. That force translates to the construction and the design of the construction. I understand that as well, but still not sure I am up to the task.  
 As I told someone I appreciate lately, once I will be standing on the other end of a successfully run software project, I will know. Up until then, it's all theory, and it's on me to prove it.
 
-##What about You?##
+## What about You? ##
 
 If you also sense something is wrong, gambling your way in and out of projects, could not fully grok the affects of the efforts you or your team are making, I urge you to go and take one of the classes. Either one would be enough to give you a glimpse of where the true problems are. The rest will be up to you, the same way it is up to me now.
 

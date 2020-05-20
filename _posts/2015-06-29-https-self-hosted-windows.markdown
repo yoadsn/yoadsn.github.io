@@ -16,10 +16,10 @@ tags:
 comments: true
 ---
 
-##What's the problem?##
+## What's the problem? ##
 Setting up a web application to be served on HTTPS using IIS is quite easy. IIS takes care of most of the "ugly" details like managing the certificates (even creating a self signed one) and creating the binding to use it. But what if you are self hosting your web server outside of IIS? In that case, you have to understand a bit more to get things working.
 
-##Long story short##
+## Long story short ##
 If all you want is to quickly get the job done without knowing too much, scroll [down](#recap) for a quick run down of the things you need to do to setup HTTPS for a self hosted web server.
 
 Assumptions:
@@ -32,7 +32,7 @@ Assumptions:
 
 If any of the assumptions above does not hold for you, reading the long story might be more useful to you.
 
-##Short story long##
+## Short story long ##
 
 I'm not a security guy but from time to time i am required to perform some SSL related acrobatics to get something done. Let's face it, developers don't like SSL, it only complicates things for them and since its not an everyday activity i find myslef always relearning stuff i already foregot.
 
@@ -48,7 +48,7 @@ Self hosting web stacks (as in, not on IIS) has become a wide spread practice an
 
 Are done against the OS directly so, more pain.
 
-###Shortest passage on SSL I could write###
+### Shortest passage on SSL I could write ###
 
 *Disclaimer - This is going to be extremely simplistic, if you know your SSL stuff, don't hurt yourself by reading this part.*
 
@@ -61,13 +61,13 @@ The certificates bind some name to a public key and with some scheme called PKI 
 If the above is too much, just know that servers have a certificate that validates they are who they clame they are. And this certificate must be presented to the client.  
 The server can use the ceritificate only if it posseses something that is called *private key* which should be kept securely on the server and not shared with any client. This private key allows the server to decrypt things that were encrypted with the public key.
 
-####The chain of trust - CA's###
+#### The chain of trust - CA's ###
 
 Certificates represent trust, You trust a certificate a server presented to you because you (or actually your OS) trusts the one who signed that certificate. Thus, a chain of trust. The roots of that chains are called Certificate Authorities (CA's) and they also idnetify themselves with certificates. These certificates are already bundled with your OS and so you trust them. When a certificate is presented to a client, it has to follow the chain of trust up until either one of the signing certificates is already trusted by him or the root is declared as untrusted and so does the entire chain.
 
 When you purchase a certificate for you domain, you pay for one of those CA's to sign the certificate for you (directly or indirectly) and vouch for your identity. They usually require some prrof of your authenticity before signing your certificate. In case of a domain name, you would have to prove you actually own that domain.
 
-###Shortest passage on HTTPS I could write###
+### Shortest passage on HTTPS I could write ###
 
 *Disclaimer - This is going to be extremely simplistic, if you know your HTTPS stuff, don't hurt yourself by reading this part.*
 
@@ -77,7 +77,7 @@ Now, when a client tries to open an HTTPS connection to a server, it uses it's D
 
 For example, if a client opens up a a connection to `www.lovelydomain.com` the certificate should state that the owner is `www.lovelydomain.com`. (or also `*.lovelydomain.com` in case of a wildcard sub domain certificate)
 
-###A mental view of the windows stack###
+### A mental view of the windows stack ###
 
 If you are like me, a mental vision of the moving parts is very helpful in understading why we need to do things and against what. This also helps in debugging problems and working around situations where the step-by-step guide is not applicable. I find this invaluable and so here is my mental view of HTTP on windows.
 
@@ -91,7 +91,7 @@ Also, HTTP.sys does not just allow anyone to listen on anything and a security m
 
 [http_server_api]: https://msdn.microsoft.com/en-us/library/windows/desktop/aa364510(v=vs.85).aspx
 
-###Certificates and Windows Certificate Stores###
+### Certificates and Windows Certificate Stores ###
 
 Certificates are a digital entity, they can be stored in files while moving them around, in memory or in any other digital form. Windows provides the concept of a *certificate store* where certificates live. Many frameworks and applications running on windows use that store as a home for the certificates they use, this includes IIS and HTTP.sys. (And also .net WCF if you care)
 
@@ -107,7 +107,7 @@ Note - There are other file formats like `.pem`,`.crt`,`.cer` which can be used 
 
 [sslshopper]: https://www.sslshopper.com/ssl-converter.html
 
-####Importing a .pfx file into the certificate store####
+#### Importing a .pfx file into the certificate store ####
 
 We import the certificates into the LocalMachine location at the MY store.
 
@@ -124,7 +124,7 @@ You can look at the certificate you imported or also import using the windows ce
 
 [cert_mmc_snapin]: https://msdn.microsoft.com/en-us/library/ms788967(v=vs.110).aspx
 
-####Self-Signed certificates####
+#### Self-Signed certificates ####
 
 For development purposes, you can skip the purcahse of a certificate from a trusted CA and just sign your own. Of course, it would not be trusted by clients but you canlive with that as long as you control **both** the client and the server.
 
@@ -141,7 +141,7 @@ Another benefit in using `New-SelfSignedCertificate` is the support for SAN - bu
 [New-SelfSignedCertificate]: https://technet.microsoft.com/en-us/library/hh848633(v=wps.630).aspx
 [makecert]: https://msdn.microsoft.com/en-us/library/bfsktky3(v=vs.110).aspx
 
-###Managing HTTP.sys using Netsh###
+### Managing HTTP.sys using Netsh ###
 
 HTTP.sys provides an API for software developers while Windows provides some tools that wrap around that API for easier administration (and monitoring).  
 You might have came across the old HttpCfg.exe tool which is obsolete since Windows Vista / Server 2008.
@@ -150,7 +150,7 @@ The only tool you need to know today is Netsh which is sort of a swiss-army knif
 
 [netsh]: https://msdn.microsoft.com/en-us/library/windows/desktop/cc307236(v=vs.85).aspx
 
-###HTTP.sys SSL bindings###
+### HTTP.sys SSL bindings ###
 
 SSL bindings are the way an ip is bound to a port using a specific certificate. You can only bind one certificate for each combination of IP and port.
 
@@ -184,12 +184,12 @@ Once done, every connection attempt to that IP+Port combination would be answere
 
 **Note:** Certificates must be imported with a private key to be valid for this usage.
 
-###Listening on the HTTPS address###
+### Listening on the HTTPS address ###
 
 Eventually, your web server would have to tell HTTP.sys it wants to listen to HTTP communication on a specific URL path. Every framework has it's own way to configure that and in self hosted .Net application it is done by the HTTPListener class. 
 When specifying the URL to listen on make sure you specify `https` as the scheme part and the port the binding is on unless it's 443 which is the default anyway.
 
-###<a name="acls"></a>Securing who can listen - URL ACLs###
+### <a name="acls"></a>Securing who can listen - URL ACLs ###
 
 This is a somewhat advanced topic, but suffice to say the process who wishes to listen on a URL must have permission to do so. Controlling this permissions can also be done using netsh and if you done everything right but still cannot reach you application - this is a good place to look for answers.
 
@@ -201,15 +201,15 @@ I have been using [this great article][Demystify-http-sys-with-HttpSysManager] t
 
 [Demystify-http-sys-with-HttpSysManager]: http://www.codeproject.com/Articles/437733/Demystify-http-sys-with-HttpSysManager
 
-##<a name="recap"></a>Quick Recap - Configuration Steps##
+## <a name="recap"></a>Quick Recap - Configuration Steps ##
 
 These steps are required to configure an SSL binding for a self hosted OWIN web application on Windows Server 2012.  
 It relies on powershell and the fact that the operations are performed as an admin.
 
-###Get a Certificate###
+### Get a Certificate ###
 Get your certificate file (which should include also the private key) on the server. For example, this could be a file with the `.pfx` suffix.
 
-###Import the certificate to the windows certificate store###
+### Import the certificate to the windows certificate store ###
 Add the certificate file to the windows Local Machine / MY store. One way of doing that would be using powershell:
 
 {% highlight powershell %}
@@ -217,7 +217,7 @@ $certpwd = ConvertTo-SecureString -String "123456" -Force –AsPlainText
 Import-PfxCertificate –FilePath C:\temp\livepbt_cert.pfx cert:\localMachine\my -Password $certpwd
 {% endhighlight %}
 
-###List the certificates to find out the certificate hash##
+### List the certificates to find out the certificate hash ##
 Each certificate has a hash identifying it. This is required for the next step.
 From within Powershell run:
 `dir cert:\localmachine\my`
@@ -234,7 +234,7 @@ The output would look something like this:
 
 Copy the `Thumbprint` out, it would be used on the next step.
 
-###Create the https binding in http.sys using netsh###
+### Create the https binding in http.sys using netsh ###
 Using the following powershell code.
 
 {% highlight powershell %}
@@ -249,7 +249,7 @@ A valid output would state that the certificate was added and the binding create
 
 `SSL Certificate successfully added`
 
-###Setup your web server to serve HTTPS###
+### Setup your web server to serve HTTPS ###
 Different web hosting server/frameworks would have different API's to do that. As an example, this is how you would do it for an OWIN self hosted asp.net WEB API application:
 
 {% highlight c# %}
@@ -258,7 +258,7 @@ Different web hosting server/frameworks would have different API's to do that. A
 
 Usually, providing the `https` scheme as part of the application base url directs the framework to bind using SSL on the 443 default port.
 
-##What i did not cover##
+## What i did not cover ##
 
 - **Wildcard certificates /SAN** - The usage of a certificate to secure any possible subdomain is an economical choice if many subdomains are used, some limitations apply though. I did not cover the usage of these types of certificates.
 - **Trusting self signed certificates** - On a client you control, you can force the OS to trust your self signed certificates. I did not cover how to do that and the benefits of this method.
