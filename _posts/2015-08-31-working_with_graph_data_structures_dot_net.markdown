@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Working With Graph Data Structures (In .Net)"
+title: "C# Graph Library - Working With Graph Data Structures"
 description: An overview of Graphs and useful tools to work with them for developers.
 date:   2015-08-31 00:00:00
 categories: DotNet Graphs
